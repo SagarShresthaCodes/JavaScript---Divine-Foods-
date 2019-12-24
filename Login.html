@@ -1,0 +1,105 @@
+<!-- Sagar Shrestha
+     ICT 4510 - ADVANCED WEBSITE DESIGN & MANAGEMENT
+     8/25/2019
+     HTML code for the final project that displays the login form and upon successful login displays the admin dashboard -->
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/finalProject.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a href="Home.html" class="navbar-brand">Divine Foods</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="Home.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Menu.html" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="About.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link adminDash" href="#" onclick="logout();">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div id="alertMessage"></div>
+    </section>
+
+    <section>
+        <div id="formId">
+            <form id="formId">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" class="form-control ">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" class="form-control">
+                </div>
+
+                <button onclick="getData()" type="button" class="btn btn-primary">SUBMIT</button>
+                <div>
+                    <span id="message"></span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <div class="adminDash">
+            <form id="add-menu-item">
+                <h1 class="h4 mb-4 font-weight-normal">Add Menu Item</h1>
+                <label for="item" class="sr-only">Item</label>
+                <input type="text" id="item" class="form-control" placeholder="*Item" required autofocus>
+                <br>
+                <label for="description" class="sr-only">Description</label>
+                <textarea id="description" class="form-control" placeholder="*Description" required></textarea>
+                <br>
+                <label for="price" class="sr-only">Item</label>
+                <input type="text" id="price" class="form-control" placeholder="*Price" required>
+                <br>
+                <button class="btn btn-md btn-primary" type="button" onclick="saveNewItem()">Save</button>
+            </form>
+            <br>
+        </div>
+    </section>
+
+    <section>
+        <div class="adminDash">
+            <div class="table-responsive">
+                <table id="menuTable" class="table table-bordered table-striped table-sm"></table>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/finalProject.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+<footer class="py-4 bg-dark text-white-50 fixed-bottom">
+    <div class="container text-center">
+        <small>University of Denver ICT4510 Final Project</small>
+    </div>
+</footer>
+
+</html>
